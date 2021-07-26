@@ -35,12 +35,12 @@
                         </form>
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active ">
-                                <a class="nav-link  text-white" href="../Home/Home.html">
+                                <a class="nav-link  text-white" href="/Home">
                                     TRANG CHỦ <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  text-white" href="#clientss">THÔNG TIN CỬA HÀNG</a>
+                                <a class="nav-link  text-white" href="/Phones">CỬA HÀNG</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link  text-white" href="../Contact/contact.html">LIÊN HỆ</a>
@@ -63,6 +63,41 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                            </li>
+                            <ul class="dropdown ">
+                                @{ var userLogin = Session["Customer"] as ShopPhone.Models.PhoneModel.Customer;}
+                                @if (userLogin != null)
+                                {
+                                    <span class="btn btn-secondary dropdown-toggle user_name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        @userLogin.Username
+                                    </span>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="/Customers/Details/@userLogin.Id">Thông tin chi tiết</a></li>
+                                        <li>
+                                            <a class="dropdown-item" href="/Orders/Index/@userLogin.Id">Lịch sử giao dịch</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/Customers/LogOut">Đăng xuất</a></li>
+                                    </ul>
+                                    @*<span>
+                                        <a href="/ShopingCart/ShowtoCart">
+                                            <i class="fas fa-shopping-cart giohang"></i>
+                                            @Html.Action("BagCart", "ShopingCart")
+                                        </a>
+                                    </span>*@
+                                }
+
+                                else
+                                {
+                                    <li class="">
+                                        <a  class="btn-danger" href="/Customers/Login">Đăng nhập</a>
+                                    </li>
+                                }
+                            </ul>
+                            <li>
+                                <a href="/ShopingCart/ShowtoCart">
+                                    <i class="fas fa-shopping-cart giohang"></i>
+                                    @Html.Action("BagCart", "ShopingCart")
+                                </a>
                             </li>
 
                         </ul>

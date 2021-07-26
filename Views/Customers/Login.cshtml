@@ -1,0 +1,37 @@
+﻿@model ShopPhone.Models.PhoneModel.Customer
+@{
+        ViewBag.Title = "Login";
+}
+    <link href="~/Asset/Login.css" rel="stylesheet" type="text/css" />
+    <div class="login">
+        <h2 class="active"> sign in </h2>
+        @using (Html.BeginForm("Login", "Customers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <form>
+                <input type="text" class="text" name="username" id="uploadCaptureInputFile">
+                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                <span>username</span>
+                <br>
+                <br>
+                <input type="password" class="text" name="password" id="uploadCaptureInputFile">
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <span>password</span>
+                <br>
+                <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
+                <label for="checkbox-1-1">Keep me Signed in</label>
+                <button class="signin" onclick="submitForm()">
+                    Sign In
+                </button>
+
+                <hr style=" margin-bottom: 23%;">
+                <span class="text-center sign-up" style="opacity:60;">
+                    Nếu bạn chưa có tài khoản -
+                    @Html.ActionLink(" đăng ký", "Register")
+                </span>
+
+            </form>
+        }
+    </div>

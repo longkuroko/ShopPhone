@@ -21,7 +21,7 @@ namespace ShopPhone.Models.PhoneModel
         [Display(Name = "Thương hiệu")]
         public Brand Brand { get; set; }
         [Required]
-        public int CategoryId { get; set; }
+        public int BrandId { get; set; }
 
         public string CPU { get; set; }
         public string Ram { get; set; }

@@ -1,0 +1,230 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+body {
+    background: #fff;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+.price span {
+    -size: 18px;
+}
+
+.cut {
+    text-decoration: line-through;
+    color: red;
+}
+
+.icons i {
+    font-size: 17px;
+    color: green;
+    margin-right: 2px;
+}
+
+.offers i {
+    color: green;
+}
+
+.delivery i {
+    color: blue;
+}
+
+label.radio {
+    cursor: pointer;
+}
+
+    label.radio input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+        label.radio input:checked + span {
+            border-color: #8f37aa;
+            background-color: #8f37aa;
+            color: #fff;
+        }
+
+.dst-ctitle {
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    border-left: 5px solid #f60;
+    margin-top: 0px;
+    text-transform: uppercase;
+}
+
+.dst-ctitle {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+.td2 {
+    background-color: beige;
+}
+
+.dst_quickby {
+    width: 100%;
+    background: #fff;
+    padding: 15px 15px;
+    border-top: 1px solid #f3f3f3;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 23%);
+    display: block;
+    /* float: left; */
+}
+
+.dst-km img {
+    max-height: 230px;
+    width: auto;
+    text-align: center;
+}
+
+.dst-rl .dst-km h3 {
+    background: #f7f7f7;
+    color: #000;
+    border: 1px solid #ececec;
+    text-align: center;
+}
+
+.dst-km h3 {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    color: #fff;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    background: #b1b4b1;
+    border-bottom: 1px solid #e3e3e3;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.dst-rl .dst-km #jc_kems {
+    height: 100px;
+    overflow: auto;
+    border: 1px solid #ececec;
+    border-top: none;
+}
+
+#dst_dsmua {
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 16px;
+    width: 100%;
+    vertical-align: middle;
+    /* float: left; */
+    padding: 7px 10px;
+    background-color: #ff6600 !important;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 23%);
+    position: relative;
+    font-weight: 600;
+    overflow: hidden;
+    color: #ffff;
+    border: navajowhite;
+    border-radius: 5px;
+}
+
+    #dst_dsmua span {
+        display: block;
+        font-size: 12px;
+        color: #fff;
+        text-transform: none;
+        margin-top: 5px;
+    }
+
+    #dst_dsmua:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+    }
+
+.single-product .dst_product_lien_quan {
+    margin-top: 10px;
+}
+
+    .single-product .dst_product_lien_quan h2 {
+        margin-bottom: 0px;
+        border-bottom: none;
+    }
+
+    .single-product .dst_product_lien_quan .content {
+        border: 1px solid #e6e6e6;
+        padding: 0 10px;
+    }
+
+.title_product {
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+.content {
+    border-left: 2px solid #818180;
+    border-right: 2px solid #818180;
+    border-bottom: 2px solid #818180;
+}
+
+.dst_product h5 {
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+.dst_product .sub_title {
+    font-size: 12px;
+    color: #908e8e;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+.single-product .dst_product_lien_quan .price {
+    color: #f60 !important;
+}
+
+.dst_product {
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+    .dst_product img {
+        width: 50%;
+    }
+
+.dst-km {
+    text-align: center;
+}
+
+.header {
+    max-width: -25px;
+}
+
+#btn2 {
+    position: absolute;
+    left: 2%;
+}
+
+.btn {
+    position: absolute;
+    left: 20%;
+}
+
+.img-title {
+    height: 394px;
+    width: 700px;
+}
+
+.body_product {
+    margin-top: 15%;
+}

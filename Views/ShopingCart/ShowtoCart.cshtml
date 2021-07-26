@@ -1,0 +1,77 @@
+﻿@model ShopPhone.Models.PhoneModel.Cart
+
+@{
+    ViewBag.Title = "ShowtoCart";
+    Layout = "~/Views/Shared/LayoutNew.cshtml";
+}
+@*<link href="~/Asset/giohang.css" type="text/css" rel="stylesheet"/>*@
+@if (Model != null)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <table class="table" style="">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            double total = Convert.ToDouble(item.Phone.Price * item.qty);
+                            <tr>
+                                <td><input id="btnThem" type="checkbox" data-view-id="" data-view-index="ca4d46e4-dbf3-11eb-9fc9-aec3650e6157"></td>
+                                <td>@Html.DisplayFor(model => item.Phone.Name)</td>
+                                <td><img src="/@item.Phone.Image" /></td>
+                                <td>@Html.DisplayFor(model => item.Phone.Price)</td>
+                                <td>
+                                    @using (Html.BeginForm("UpdateQuantity", "ShopingCart"))
+                                    {
+                                        <input type="hidden" value="@item.Phone.Id" name="ID_Product" />
+                                        @*<input type="number" value="@item.qty" name="Quantity"/>*@
+                                        <input aria-label="quantity" class="input-qty" max="10" min="1" name="Quantity" type="number" value="@item.qty">
+                                        <input type="submit" value="Update" />
+                                    }
+
+                                </td>
+                                <td>@total</td>
+                                <td><a href="/ShopingCart/RemoveCart/@item.Phone.Id"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4">
+                @{var customer = Session["Customer"] as ShopPhone.Models.PhoneModel.Customer;}
+                @using (Html.BeginForm("Checkout", "ShopingCart"))
+                {
+                    <div class="styles__StyledShippingAddress-sc-1sjj51k-0 dBdDDu">
+                        <p class="heading"><span class="text">Giao tới</span><span data-view-id="cart_shipping_location.change" class="link">Thay đổi</span></p><p class="title"><b class="name">@customer.fullname</b><b class="phone">@customer.Phone</b></p><p class="address">@customer.Address</p>
+                    </div>
+                    <div class="prices">
+                        <ul class="prices__items"><li class="prices__item"><span class="prices__text">Tạm tính</span><span class="prices__value">@Model.TotalMoney()</span></li><li class="prices__item"><span class="prices__text">Giảm giá</span><span class="prices__value">0</span></li></ul><p class="prices__total"><span class="prices__text">Tổng cộng</span><span class="prices__value prices__value--final">@Model.TotalMoney()<i>(Đã bao gồm VAT nếu có)</i></span></p>
+                    </div>
+                    <div>
+                        <a class="btn btn-block btn-primary" href="/ShopingCart/Checkout">Mua Hàng</a>
+                    </div>
+                 
+                        
+        
+          
+                }
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+}
+
+

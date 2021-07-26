@@ -1,0 +1,67 @@
+﻿@model ShopPhone.Models.PhoneModel.Customer
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<link href="~/Asset/Signup.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<div class="login">
+    <h2 class="active"> Register </h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <form>
+
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control text" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            <span>username</span>
+            @if (ViewBag.error != null)
+            {
+                <span class="badge badge-danger">@ViewBag.error</span>
+
+            }
+            <br>
+
+            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control text" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <span>password</span>
+
+
+            <br>
+
+            @Html.EditorFor(model => model.fullname, new { htmlAttributes = new { @class = "form-control text" } })
+            @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
+            <span>Full Name</span>
+            <br>
+
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control text" } })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            <span>Address</span>
+            <br>
+
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            <span>Email</span>
+            <br>
+
+            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control text" } })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            <span>Phone</span>
+            <br>
+
+            <button class="signin sign">
+                Sign Up
+            </button>
+
+
+        </form>
+    }
+
+</div>
+
