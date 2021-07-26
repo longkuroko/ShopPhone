@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/Asset/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <a class="navbar-brand" href="../Home/Home.html">
+                        <img src="../img/logo-removebg-preview.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active ">
+                                <a class="nav-link  text-white" href="../Home/Home.html">
+                                    TRANG CHỦ <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-white" href="#clientss">THÔNG TIN CỬA HÀNG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-white" href="../Contact/contact.html">LIÊN HỆ</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle  text-white" href="../Shop/shop.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    THỂ LOẠI
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="../Shop/shop.html">OPPO</a>
+                                    <a class="dropdown-item" href="../Shop/shop.html">APPLE</a>
+                                    <a class="dropdown-item" href="../Shop/shop.html">ASUS</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="../Shop/shop.html">CÁC DÒNG MÁY KHÁC</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link  text-white" href="../New/new.html">TIN TỨC</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="store">
+        @RenderBody()
+    </div>
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-inner padding-top-50">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-lg-8">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-lg-6">
+                                <div class="footer-widget mt-5">
+                                    <ul class="list-menu list-showroom margin-top-15">
+                                        <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                                        <li>
+                                            <a href="#">Hình thức thanh toán</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Chính sách bảo hành</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Chính sách vận chuyển</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Chính sách đổi trả hàng</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Khuyến mãi và mã giảm giá</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-lg-6">
+                                <div class="footer-widget mt-5">
+                                    <h5>THÔNG TIN CẦN BIẾT</h5>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Gọi mua hàng:
+                                                <span class="text-danger">0931456274</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Giờ làm việc: 8h30 đến 22h00</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Chính sách và quy định chung</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Chính sách và bảo mật thông tin </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="footer-widget text_align_center mt-5">
+                            <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                            <img src="../img/payment_1.svg" alt="">
+                            <img src="../img/payment_2.svg" alt="">
+                            <img src="../img/payment_3.svg" alt="">
+                            <br>
+                            <img class="hinh4" src="../img/payment_4.svg" alt="">
+                            <img class="mt-2" src="../img/payment_5.svg" alt="">
+                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                            <a href="https://www.facebook.com/Momi.hii"><i class="fab fa-facebook-square logo_footer"></i></a>
+                            <i class="fab fa-twitter-square logo_footer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-footer">
+        <div class="container text-center mt-4 ">
+            <p class="pt-4">ROTSSS © 2003 Thuansss Mobile</p>
+            <p>HỘ KINH DOANH PHUC ThUAN 5</p>
+            <p>Số giấy chứng nhận ĐKKD: 07042002, ngày cấp 22/05/2019</p>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

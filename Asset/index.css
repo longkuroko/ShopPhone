@@ -1,0 +1,720 @@
+﻿.header {
+    background: rgb(241, 221, 221);
+    background: linear-gradient( 62deg, rgba(241, 221, 221, 1) 11%, rgba(251, 251, 251, 1) 46%, rgba(241, 217, 217, 1) 47%, rgba(255, 0, 0, 0.6533963927367823) 48%);
+}
+
+.dropdown-menu {
+    background: #ff0808;
+}
+
+.navbar-nav {
+    padding-left: 265px;
+}
+
+.slider_banner {
+    margin-top: 55px;
+}
+
+#navbarSupportedContent {
+    width: 100%;
+}
+
+.full {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    float: left;
+    position: relative;
+    padding-top: 11px;
+}
+
+.main-menu {
+    text-align: center;
+}
+
+ul,
+li,
+ol {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.main-menu ul > li {
+    position: inherit;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul,
+li,
+ol {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.menu-area-main li.active a {
+    color: #fff;
+}
+
+.main-menu ul > li a {
+    line-height: 20px;
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    padding: 22px 30px;
+}
+
+.location_icon_bottum {
+    bottom: 0;
+    position: absolute;
+    margin-bottom: -111px;
+    z-index: 999;
+    background: #ff0000;
+    width: 100%;
+    position: relative;
+}
+
+    .location_icon_bottum::before {
+        position: absolute;
+        content: "";
+        top: 11px;
+        background: url(../icon/wfe4.png);
+        background-repeat: repeat;
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        left: -38px;
+    }
+
+    .location_icon_bottum ul li {
+        display: inline-block;
+        padding: 17px 10px;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+        .location_icon_bottum ul li img {
+            padding-right: 10px;
+        }
+
+.banner-main {
+    position: relative;
+    font-family: poppins;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.relative {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    bottom: auto;
+}
+
+.banner-main .carousel-caption span {
+    font-size: 65px;
+    font-weight: 500;
+    line-height: 70px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+.banner-main .carousel-caption h1 {
+    color: #fff;
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: bold;
+}
+
+.banner-main .carousel-caption p {
+    font-size: 17px;
+    padding: 20px 0px 50px 0px;
+}
+
+.banner-main .carousel-caption .buynow {
+    text-transform: uppercase;
+    border: #fff solid 1px;
+    background: #fff;
+    width: 196px;
+    padding: 12px 0;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 30px;
+    color: #f00;
+    text-align: center;
+    border-radius: 30px;
+}
+
+ul.social_icon {
+    list-style: none;
+    padding-top: 5px;
+}
+
+    ul.social_icon li {
+        float: left;
+        color: #fff;
+        align-items: center;
+        padding-right: 10px;
+        margin-top: 17px;
+    }
+
+        ul.social_icon li a {
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border: solid #fff 1px;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 100%;
+            font-size: 18px;
+        }
+
+.banner-main .carousel-caption .buynow:hover {
+    border: #ff0000 solid 1px;
+    background: #ff0000;
+    color: #fff;
+}
+
+#myCarousel a.carousel-control-next {
+    position: absolute;
+    top: 40% !important;
+    left: inherit !important;
+    right: 17px !important;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+
+#myCarousel a.carousel-control-prev {
+    position: absolute;
+    top: 40% !important;
+    left: 17px !important;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+
+ul.social_icon {
+    list-style: none;
+    padding-top: 5px;
+}
+
+#myCarousel a.carousel-control-next {
+    position: absolute;
+    left: 10px;
+    top: inherit;
+    bottom: 10px;
+}
+
+#myCarousel .carousel-control-prev,
+#myCarousel .carousel-control-next {
+    width: 62px;
+    height: 60px;
+    background: #fffdfd;
+    opacity: 1;
+    font-size: 30px;
+    color: #000;
+}
+
+#myCarousel .carousel-control-prev,
+#myCarousel .carousel-control-prev {
+    width: 62px;
+    height: 60px;
+    background: #fffdfd;
+    opacity: 1;
+    font-size: 30px;
+    color: #000;
+}
+
+    #myCarousel .carousel-control-prev:hover,
+    #myCarousel .carousel-control-next:hover,
+    #myCarousel .carousel-control-prev:focus,
+    #myCarousel .carousel-control-next:focus {
+        background: #ff0000;
+        color: #fff;
+    }
+
+.about {
+    padding-top: 90px;
+    padding-bottom: 84px;
+    background: url(../img/aboutbg.jpg);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+
+    .about .about_box {
+        text-align: right;
+        padding-top: 130px;
+    }
+
+        .about .about_box h3 {
+            font-weight: bold;
+            font-size: 30px;
+            color: #888687;
+            line-height: 32px;
+            padding-bottom: 7px;
+            display: block;
+        }
+
+        .about .about_box span {
+            font-weight: bold;
+            font-size: 50px;
+            line-height: 58px;
+            color: #23242a;
+            padding-bottom: 10px;
+            display: block;
+        }
+
+        .about .about_box p {
+            font-size: 17px;
+            line-height: 30px;
+            color: #23242a;
+        }
+
+.brand {
+    padding-top: 60px;
+    border-top: #db0000 solid 6px;
+}
+
+.titlepage {
+    padding-bottom: 60px;
+}
+
+    .titlepage h2 {
+        font-size: 50px;
+        line-height: 40px;
+        font-weight: bold;
+        padding: 0;
+    }
+
+.brand-bg {
+    background: #ebebeb;
+    padding: 90px 0px;
+    font-family: Myriad Pro;
+}
+
+.margin {
+    margin-bottom: 30px;
+}
+
+.brand-bg .brand_box {
+    background: #fff;
+    text-align: center;
+    padding: 80px 0px 30px 0px;
+}
+
+    .brand-bg .brand_box > img {
+        height: 200px;
+        width: auto;
+    }
+
+    .brand-bg .brand_box span {
+        display: block;
+        color: #19449b;
+        font-size: 16px;
+        line-height: 16px;
+        padding-bottom: 3px;
+    }
+
+.read-more {
+    font-family: poppins;
+    max-width: 212px;
+    margin: 0 auto;
+    margin-top: 0px;
+    display: block;
+    background: #000;
+    color: #fff !important;
+    padding: 12px 0px;
+    width: 100%;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 32px;
+    margin-top: 40px;
+}
+
+    .read-more:hover {
+        background: #ff0000;
+    }
+
+.brand-bg .brand_box h3 {
+    font-size: 27px;
+    font-weight: bold;
+    color: #131313;
+    padding: 17px 0px 0px 0px;
+}
+
+.clients .titlepage {
+    padding-bottom: 0px;
+}
+
+.titlepage h2 {
+    font-size: 50px;
+    line-height: 40px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.clients_red {
+    background: #ff0000;
+    padding-top: 90px;
+    padding-bottom: 110px;
+}
+
+.carousel {
+    position: relative;
+}
+
+#testimonial_slider .carousel-indicators {
+    bottom: -50px;
+}
+
+    #testimonial_slider .carousel-indicators li {
+        width: 36px;
+        height: 12px;
+        background-color: #000;
+        border-radius: 50px;
+    }
+
+        #testimonial_slider .carousel-indicators li.active {
+            background-color: #fff;
+        }
+
+.clients {
+    background: #fff;
+    padding: 60px 0px;
+}
+
+.carousel-indicators li::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    content: "";
+}
+
+.carousel-indicators li::after {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    content: "";
+}
+
+.cross_layout {
+    transform: skew(-25deg);
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.testimonial_cont {
+    background: #fff;
+    padding-top: 60px;
+    min-height: 295px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.cross_layout {
+    transform: skew(-25deg);
+}
+
+.cross_inner {
+    transform: skew(25deg);
+}
+
+.testomonial_section {
+    padding: 0 75px;
+}
+
+.clients .titlepage {
+    padding-bottom: 0px;
+}
+
+.footer {
+    background-color: #051108;
+    text-align: center;
+    font-family: poppins;
+}
+
+.pdn-top-30 {
+    padding-top: 60px;
+}
+
+.footer .headinga h3 {
+    font-size: 38px;
+    display: block;
+    color: #fff;
+    max-width: 850px;
+    padding-bottom: 1px;
+    border-bottom: #fff solid 1px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    margin-bottom: 30px;
+}
+
+.footer .headinga span {
+    font-size: 17px;
+    display: block;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.footer .headinga p {
+    font-size: 17px;
+    display: block;
+    color: #fff;
+    line-height: 30px;
+}
+
+ul.location_icon {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 5px;
+}
+
+    ul.location_icon li {
+        float: left;
+        height: 60px;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-right: 20px;
+    }
+
+        ul.location_icon li a {
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border: solid #fff 1px;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 100%;
+            font-size: 18px;
+        }
+
+.copyright {
+    background: #fff;
+    padding: 20px 0px 20px 0;
+    margin-top: 50px;
+}
+
+.collapse .navbar-nav .nav-item .nav-link {
+    margin-right: 60px;
+    width: 110%;
+    text-align: center;
+}
+
+.collapse .navbar-nav .nav-item {
+    width: 30%;
+}
+
+.btn {
+    position: absolute;
+    left: 16%;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: -12%;
+}
+
+.hinh4 {
+    margin-left: 30px;
+    margin-top: 8px;
+}
+
+.logo_footer {
+    font-size: 40px;
+}
+
+.site-footer {
+    background-color: silver;
+}
+
+.footer-widget ul li a {
+    color: #ffff;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.bottom-footer {
+    background-color: black;
+    margin-top: -24px;
+    padding-bottom: 20px;
+}
+
+    .bottom-footer p {
+        color: #ebebeb;
+    }
+
+@media (max-width: 575.98px) {
+    .location_icon_bottum {
+        display: none;
+    }
+
+    .navbar {
+        text-align: center;
+    }
+
+    .first-slide {
+        height: 100%;
+    }
+
+    .second-slide {
+        height: 100%;
+    }
+
+    .third-slide {
+        height: 100%;
+    }
+
+    .carousel-control-prev {
+        display: none;
+    }
+
+    .carousel-control-next {
+        display: none;
+    }
+
+    .banner-main .carousel-caption span {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 50px;
+    }
+
+    .banner-main .carousel-caption h1 {
+        color: #fff;
+        font-size: 44px;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+    .about {
+        padding-top: 80px;
+        padding-bottom: 84px;
+        background: url(../img/aboutbg.jpg);
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-repeat: repeat;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: 97% 11%;
+    }
+
+        .about .about_box h3 {
+            font-weight: bold;
+            font-size: 24px;
+            color: #888687;
+            line-height: 30px;
+            padding-bottom: 5px;
+            display: block;
+        }
+
+        .about .about_box span {
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 51px;
+            color: #23242a;
+            padding-bottom: 10px;
+            display: block;
+            text-align: left;
+        }
+
+        .about .about_box p {
+            font-size: 14px;
+            line-height: 27px;
+            color: #23242a;
+            text-align: left;
+        }
+
+    .testimonial_cont {
+        background: #fff;
+        padding-top: 60px;
+        min-height: 276px;
+        padding-left: 22px;
+        padding-right: 74px;
+    }
+
+    .cross_inner h3 {
+        font-size: 25px;
+    }
+
+    .cross_inner p {
+        margin-right: 22px;
+    }
+
+    .cross_inner {
+        margin-top: 55px;
+    }
+
+    .full {
+        width: 90%;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .margin_top_30 img {
+        width: 20%;
+    }
+
+    .carousel-indicators {
+        width: 40%;
+        margin-left: 30%;
+    }
+
+    .navbar-brand img {
+        margin-left: 27px;
+    }
+
+    .navbar-toggler {
+        margin-left: 70%;
+    }
+
+    .navbar-nav {
+        padding-left: 100px;
+        background-color: black;
+    }
+
+    .slider_banner {
+        margin-top: 0px;
+    }
+}
