@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ShopPhone.Models.PhoneModel.Brand>
+
+<div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap">
+    @foreach (var item in Model)
+    {
+
+        <a href="@Url.Action("ProductByBrand","Phones", new { id = item.Id})" class="list-group-item dropdown-item">@item.Name</a>
+
+    }
+</div>

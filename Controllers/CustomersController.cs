@@ -116,5 +116,41 @@ namespace ShopPhone.Controllers
             }
             return View(customer);
         }
+        [HttpPost]
+        public JsonResult UpdateInfo(int id, string fullName, string address, string phone, string email)
+        {
+
+            var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
+            customer.fullname = fullName;
+
+            customer.Address = address;
+            customer.Phone = phone;
+            customer.Email = email;
+
+            UpdateModel(customer);
+            db.SaveChanges();
+
+            Session["Customer"] = customer;
+
+            return Json("Success", JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult ChangePwd(long id, string newPwd)
+        {
+            var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
+            if (customer != null)
+            {
+                customer.Password = newPwd;
+                UpdateModel(customer);
+                db.SaveChanges();
+                Session["Customer"] = customer;
+                return Json("Success", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("CannotFindCustomer", JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }

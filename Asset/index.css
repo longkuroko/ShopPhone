@@ -585,6 +585,12 @@ ul.location_icon {
         color: #ebebeb;
     }
 
+
+
+
+.name_userr {
+    transform: translate(81px, -17px);
+}
 @media (max-width: 575.98px) {
     .location_icon_bottum {
         display: none;
@@ -717,4 +723,11 @@ ul.location_icon {
     .slider_banner {
         margin-top: 0px;
     }
+}
+
+
+
+.card_item {
+    position: relative;
+    left: 490%;
 }

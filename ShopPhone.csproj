@@ -219,7 +219,9 @@
     <Compile Include="ViewModel\CheckoutViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\Phone.css" />
     <Content Include="Asset\giohang.css" />
+    <Content Include="Asset\index1.css" />
     <Content Include="Asset\index.css" />
     <Content Include="Asset\Login.css" />
     <Content Include="Asset\ProductDetails.css" />
@@ -252,7 +254,6 @@
     <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Phones\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Phones\Delete.cshtml" />
@@ -311,11 +312,16 @@
     <Content Include="Views\Customers\Register.cshtml" />
     <Content Include="Views\ShopingCart\ShowtoCart.cshtml" />
     <Content Include="Views\ShopingCart\BagCart.cshtml" />
+    <Content Include="Views\ShopingCart\OrderSuccess.cshtml" />
+    <Content Include="Views\Phones\Brand.cshtml" />
+    <Content Include="Views\Phones\ProductByBrand.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="img\" />
+    <Folder Include="UploadFile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

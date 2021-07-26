@@ -1,0 +1,374 @@
+﻿@model ShopPhone.Models.PhoneModel.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutNew.cshtml";
+}
+
+<style>
+    .container-flex {
+        display: flex;
+    }
+
+    .profileUserParent {
+        padding-bottom: 41px;
+        border-radius: 5px;
+    }
+
+    .profile-sumary {
+        width: 260px;
+        min-width: 260px;
+        min-height: 523px;
+        border-radius: 5px;
+    }
+
+        .profile-sumary
+        .boxProfileSumary {
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 6px 0;
+            background-color: #fff;
+            padding: 10px 9px;
+            border-radius: 3px;
+        }
+
+        .profile-sumary .spliter {
+            padding: 0 9px;
+            margin-top: 9px;
+            margin-bottom: 9px;
+        }
+
+    .container-flex .profile-content {
+        padding: 16px 16px 0;
+        flex: 1;
+    }
+
+        .container-flex .profile-content .section-header .header-title {
+            font-size: 20px;
+            font-weight: 400;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.1;
+            letter-spacing: normal;
+            text-align: left;
+            color: #666;
+        }
+
+        .container-flex .profile-content hr {
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container-flex .profile-content .section-content {
+            display: flex;
+        }
+
+            .container-flex .profile-content .section-content .content-container .content-title {
+                font-size: 20px;
+                font-weight: 400;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.1;
+                letter-spacing: normal;
+                text-align: left;
+                color: #666;
+                margin-bottom: 10px;
+            }
+
+    .d-md-block {
+        min-width: 768px;
+        display: block !important;
+    }
+
+    .profileUserContent .row .p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .bgWhite {
+        background-color: #fff;
+    }
+
+    .form-control {
+        display: block;
+        width: 400%;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    .input-label {
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .content1 {
+        transform: translate(160px, -42px);
+        width: 72%;
+        margin-top: 10px;
+        padding: 2px 8px;
+        border-radius: 8px;
+        border: 1px solid #c0bcbc;
+    }
+
+        .content1:focus {
+            outline: #93e3f3 !important;
+            border: 1px solid #93e3f3;
+        }
+
+    .btn2 {
+        background-color: #0d234a;
+        color: #fff;
+    }
+
+    .modal-content {
+        width: 140% !important;
+    }
+
+    .form-control_popup {
+        width: 98%;
+    }
+
+    .modal_password {
+        width: 75% !important;
+    }
+
+    .modal-dialog_pass {
+        transform: translate(11px, 151px) !important;
+    }
+
+    .conten_password {
+        transform: translate(113px, -43px);
+        width: 62%;
+    }
+</style>
+<div id="scroll" class="container container-flex mb-lg-5 profileUserParent profileUserHome">
+    <div class="profile-content d-none d-lg-block">
+        <div class="profileUserHome d-none d-md-block">
+            <div class="section-header d-none d-lg-flex">
+                <div class="header-title">Chi tiết tài khoản</div>
+            </div>
+            <hr class="d-none d-lg-block">
+            <div class="section-content">
+                <div class="content-container method-container">
+                    <div class="content-title">Thông tin tài khoản</div>
+                    <div class="bgWhite profileUserContent">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-control">
+                                @Html.HiddenFor(m => m.Id)
+                                @Html.HiddenFor(m => m.Username)
+                                @Html.HiddenFor(m => m.Password)
+                                <div>
+                                    <label for="@Html.DisplayFor(model => model.fullname)" class="input-label">Họ và tên</label>
+                                    <div>
+                                        <input id="Id" name="Id" type="text" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                    </div>
+                                </div>
+                                <div style="transform: translateY(-34px);">
+                                    <label for="@Html.DisplayFor(model => model.Phone)" class="input-label">Số Điện thoại </label>
+                                    <div>
+                                        <input type="text" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                                    </div>
+                                </div>
+
+                                <div style="transform: translateY(-65px);">
+                                    <label for="@Html.DisplayFor(model => model.Email)" class="input-label">Email</label>
+                                    <div>
+                                        <input type="text" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                                    </div>
+                                </div>
+                                <div style="transform: translateY(-65px);">
+                                    <label for="@Html.DisplayFor(model => model.Address)" class="input-label">Địa chỉ</label>
+                                    <div>
+                                        <input type="text" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
+                                    </div>
+                                </div>
+                                <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#exampleModal">
+                                    THAY ĐỔI THÔNG TIN
+                                </button>
+                                <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#PASSWORD">
+                                    ĐỔI MẬT KHẨU
+                                </button>
+                            </div>
+                        }
+                        @*UPDATE THONG TIN CA NHANH*@
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT THÔNG TIN</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form>
+                                        <div class="modal-body">
+                                            <div class="form-control form-control_popup">
+
+                                                <div>
+                                                    <label class="input-label">Họ và tên</label>
+                                                    <div>
+                                                        <input type="text" id="txtCustomerName" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                                    </div>
+                                                </div>
+                                                <div style="transform: translateY(-34px);">
+                                                    <label for="txtPatientNumber" class="input-label">Số Điện thoại </label>
+                                                    <div>
+                                                        <input type="text" id="txtPatientNumber" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="transform: translateY(-65px);">
+                                                    <label for="txtPatientEmail" class="input-label">Email</label>
+                                                    <div>
+                                                        <input type="text" id="txtPatientEmail" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                                                    </div>
+                                                </div>
+                                                <div style="transform: translateY(-65px);">
+                                                    <label for="txtAddress" class="input-label">Địa chỉ</label>
+                                                    <div>
+                                                        <input type="text" id="txtAddress" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                       
+                                            <a href="#" class="btn btn-primary btn-save-info" onclick="UpdateInfo(this)" itemid="@Model.Id">Lưu</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--DOI MAT KHAU-->
+                        <div class="modal fade" id="PASSWORD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog_pass" role="document">
+                                <div class="modal-content modal_password">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">ĐỔI MẬT KHẨU</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-control form-control_popup ">
+                                            <div>
+                                                <label class="input-label">Mật khẩu cũ</label>
+                                                <div>
+                                                    <input type="password" class="content1 conten_password" id="old_pwd" placeholder="nhập mật khẩu cũ" />
+                                                </div>
+                                            </div>
+                                            <div style="transform: translateY(-34px);">
+                                                <label class="input-label">Mật khẩu mới</label>
+                                                <div>
+                                                    <input type="password" class="content1 conten_password" id="new_pwd" placeholder="nhập mật khẩu mới" />
+                                                </div>
+                                            </div>
+
+                                            <div style="transform: translateY(-65px);">
+                                                <label class="input-label">Confirm</label>
+                                                <div>
+                                                    <input type="password" class="content1 conten_password" id="new_pwd_confirm" placeholder="nhập lại mật khẩu" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                                        <a href="#" class="btn btn-primary btn-save-info" onclick="SavePwd(this)" itemid="@Model.Id">Lưu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Assets/Client/petshop/bootstrap/js/popper.min.js"></script>
+<script src="~/Assets/Client/petshop/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Assets/Client/petshop/js/script.js"></script>
+<script>
+    function UpdateInfo(item) {
+        var userId = $(item).attr('itemid');
+        var fullName = $('#txtCustomerName').val();
+        var address = $('#txtAddress').val();
+        var phone = $('#txtPatientNumber').val();
+        var email = $('#txtPatientEmail').val();
+
+        var obj = {
+            Id: userId,
+            FullName: fullName,
+            Address: address,
+            Phone: phone,
+            Email: email
+        };
+        $.ajax({
+            url: '/Customer/UpdateInfo',
+            method: 'POST',
+            data: obj,
+            success: function (data) {
+                if (data == "Success") {
+                    alert('Cập nhật thành công!');
+                    $('#exampleModal').modal('toggle');
+                    window.location.reload();
+                }
+            },
+            error: function () {
+                alert('Có lỗi xảy ra.');
+            }
+        });
+    };
+    //thay đổi mật khẩu
+    function SavePwd(item) {
+        var userId = $(item).attr('itemid');
+        var oldPwd = $('#old_pwd').val();
+        var newPwd = $('#new_pwd').val();
+        var newPwdConfirm = $('#new_pwd_confirm').val();
+        if (oldPwd == "" || oldPwd == undefined) {
+            alert('Bạn chưa nhập mật khẩu cũ.');
+        }
+        else {
+            if (newPwd == "" || newPwd == undefined) {
+                alert('Bạn chưa nhập mật khẩu mới.');
+            }
+            else {
+                if (newPwdConfirm == "" || newPwdConfirm == undefined) {
+                    alert('Bạn chưa nhập xác nhận mật khẩu.');
+                }
+                else {
+                    if (newPwd != newPwdConfirm) {
+                        alert('Mật khẩu không trùng khớp.');
+                    }
+                    else {
+                        var obj = {
+                            id: userId,
+                            newPwd: newPwd
+                        };
+                        $.ajax({
+                            url: '/Customer/ChangePwd',
+                            method: 'POST',
+                            data: obj,
+                            success: function (data) {
+                                if (data == "Success") {
+                                    alert('Thay đỗi mật khẩu thành công.');
+                                    window.location.reload();
+                                }
+                                else {
+                                    alert(data);
+                                }
+                            },
+                            error: function () {
+                                alert('Có lỗi xảy ra.')
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    }
+</script>

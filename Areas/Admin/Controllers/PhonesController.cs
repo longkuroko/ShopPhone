@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -11,6 +12,7 @@ using ShopPhone.Models.PhoneModel;
 
 namespace ShopPhone.Areas.Admin.Controllers
 {
+    [Authorize]
     public class PhonesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -49,10 +51,19 @@ namespace ShopPhone.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,BrandId,CPU,Ram,ManHinh")] Phone phone)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,BrandId,CPU,Ram,ManHinh")] Phone phone,HttpPostedFileBase fileupload)
         {
+            if (fileupload != null)
+            {
+                string filename = Path.GetFileName(fileupload.FileName);
+                string path = Server.MapPath("~/UploadFile/" + filename);
+                fileupload.SaveAs(path);
+                phone.Image = "UploadFile/" + filename;
+
+            }
             if (ModelState.IsValid)
             {
+
                 db.Phones.Add(phone);
                 db.SaveChanges();
                 return RedirectToAction("Index");

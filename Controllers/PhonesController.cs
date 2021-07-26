@@ -43,7 +43,20 @@ namespace ShopPhone.Controllers
             return View(phone);
         }
 
+        //Tìm kiếm theo thương hiện
+        public ActionResult Brand()
+        {
+            var category = from cd in db.Brands select cd;
 
-      
+            return PartialView(category);
+        }
+        public ActionResult ProductByBrand(int id, int? page)
+        {
+            var products = db.Phones.Where(s => s.BrandId == id).ToList();
+            return View(products.ToPagedList(page ?? 1, 9));
+        }
+
+
+
     }
 }
