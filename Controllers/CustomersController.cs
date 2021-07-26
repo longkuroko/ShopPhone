@@ -136,7 +136,7 @@ namespace ShopPhone.Controllers
         }
 
         [HttpPost]
-        public JsonResult ChangePwd(long id, string newPwd)
+        public JsonResult ChangePwd(int id, string newPwd)
         {
             var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
             if (customer != null)

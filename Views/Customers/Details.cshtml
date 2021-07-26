@@ -115,9 +115,10 @@
         }
 
     .btn2 {
-        background-color: #0d234a;
+        background-color: #0d234a !important;
         color: #fff;
     }
+
 
     .modal-content {
         width: 140% !important;
@@ -183,12 +184,14 @@
                                         <input type="text" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
                                     </div>
                                 </div>
-                                <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#exampleModal">
-                                    THAY ĐỔI THÔNG TIN
-                                </button>
-                                <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#PASSWORD">
-                                    ĐỔI MẬT KHẨU
-                                </button>
+                                <div class="btn_inf position-relative">
+                                    <button type="button" class="btn2 btn mt-3 changeinfo position-static" data-toggle="modal" data-target="#exampleModal">
+                                                                             THAY ĐỔI THÔNG TIN
+                                     </button>
+                                    <button type="button" class="btn2 btn mt-3 changeinfo" style="transform:translateX(70px)" data-toggle="modal" data-target="#PASSWORD">
+                                                                                 ĐỔI MẬT KHẨU
+                                        </button>
+                                </div>
                             </div>
                         }
                         @*UPDATE THONG TIN CA NHANH*@
