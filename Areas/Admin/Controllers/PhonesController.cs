@@ -56,19 +56,18 @@ namespace ShopPhone.Areas.Admin.Controllers
             if (fileupload != null)
             {
                 string filename = Path.GetFileName(fileupload.FileName);
-                string path = Server.MapPath("~/UploadFile/" + filename);
+                string path = Server.MapPath("~/Anh/" + filename);
                 fileupload.SaveAs(path);
-                phone.Image = "UploadFile/" + filename;
+                phone.Image = "Anh/" + filename;
 
             }
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
                 db.Phones.Add(phone);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.BrandId = new SelectList(db.Brands, "Id", "Name", phone.BrandId);
             return View(phone);
         }
