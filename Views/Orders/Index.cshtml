@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ShopPhone.Models.PhoneModel.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutNew.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderTotal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderTotal)
+        </td>
+    </tr>
+}
+
+</table>

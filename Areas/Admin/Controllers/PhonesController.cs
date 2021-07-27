@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -51,26 +50,42 @@ namespace ShopPhone.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,BrandId,CPU,Ram,ManHinh")] Phone phone,HttpPostedFileBase fileupload)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,BrandId,CPU,Ram,ManHinh")] Phone phone)
         {
-            if (fileupload != null)
-            {
-                string filename = Path.GetFileName(fileupload.FileName);
-                string path = Server.MapPath("~/Anh/" + filename);
-                fileupload.SaveAs(path);
-                phone.Image = "Anh/" + filename;
-
-            }
             if (ModelState.IsValid)
             {
-
                 db.Phones.Add(phone);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.BrandId = new SelectList(db.Brands, "Id", "Name", phone.BrandId);
             return View(phone);
         }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,BrandId,CPU,Ram,ManHinh")] Phone product, HttpPostedFileBase fileupload)
+        //{
+
+        //    ViewBag.CategoryId = new SelectList(db.Brands, "Id", "Name");
+        //    if (fileupload != null)
+        //    {
+        //        string filename = Path.GetFileName(fileupload.FileName);
+        //        string path = Server.MapPath("~/UploadFile/" + filename);
+        //        fileupload.SaveAs(path);
+        //        product.Image  = "UploadFile/" + filename;
+
+        //    }
+        //    if (ModelState.IsValid)
+        //    {
+
+        //        db.Phones.Add(product);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(product);
+        //}
 
         // GET: Admin/Phones/Edit/5
         public ActionResult Edit(int? id)

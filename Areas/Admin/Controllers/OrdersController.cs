@@ -11,6 +11,7 @@ using ShopPhone.Models.PhoneModel;
 
 namespace ShopPhone.Areas.Admin.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

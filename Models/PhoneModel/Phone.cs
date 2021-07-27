@@ -29,5 +29,9 @@ namespace ShopPhone.Models.PhoneModel
         public string ManHinh { get; set; }
         //public string Color { get; set; }
 
+        public Phone(){
+            }
+
+
     }
 }
