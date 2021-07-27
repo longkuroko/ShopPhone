@@ -101,6 +101,8 @@ namespace ShopPhone.Controllers
 
         }
 
+
+        //Xem chi tiết ngườ dùng
         public ActionResult Details(int? id)
         {
             int customerId = id ?? default(int);
@@ -116,6 +118,8 @@ namespace ShopPhone.Controllers
             }
             return View(customer);
         }
+
+        //cập nhật thông tin
         [HttpPost]
         public JsonResult UpdateInfo(int id, string fullName, string address, string phone, string email)
         {
@@ -135,6 +139,7 @@ namespace ShopPhone.Controllers
             return Json("Success", JsonRequestBehavior.AllowGet);
         }
 
+        //cập nhật mậ khẩu
         [HttpPost]
         public JsonResult ChangePwd(int id, string newPwd)
         {

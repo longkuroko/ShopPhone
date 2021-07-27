@@ -6,9 +6,29 @@
     Layout = "~/Views/Shared/LayoutNew.cshtml";
 }
 <link href="~/Asset/Phone.css" rel="stylesheet" type="text/css" />
+<style>
+    .dropdown11 {
+        border: 1px solid #eaeaea;
+        height: 550px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    .list-group-item {
+        border: none;
+    }
+
+    .pagination > li {
+        text-align: center;
+        margin: 0px auto;
+        width: 25px;
+        height: 25px;
+        border: 1px solid;
+    }
+</style>
 <section class="py-5 body_shop">
 
-    <div class="container px-4 px-lg-5 mt-5">
+    <div class="container">
         @using (Html.BeginForm("Index", "Phones", FormMethod.Get))
         {
             <div class="text-input text-center mb-5">
@@ -16,21 +36,26 @@
                 <button type="submit" class="btn btn-success">Tìm KIẾM</button>
             </div>
         }
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col-4">
+        <div class="d-flex ">
+            <div class="">
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Thương hiệu
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @Html.Action("Brand", "Phones")
-                    </div>
+                <div class="dropdown11">
+                    @*<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Thương hiệu
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @Html.Action("Brand", "Phones")
+                        </div>*@
+                    <ul>
+                        <h5>HÃNG ĐIỆN THOẠI</h5>
+                        <li>@Html.Action("Brand", "Phones")</li>
+
+                    </ul>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="">
 
-                <div class="row mb-5">
+                <div class="row mb-5" style="transform: translateX(84px);">
                     @foreach (var item in Model)
                     {
                         <div class="col-4">

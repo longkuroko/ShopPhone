@@ -61,7 +61,7 @@ namespace ShopPhone.Areas.Admin.Controllers
                 phone.Image = "UploadFile/" + filename;
 
             }
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
 
                 db.Phones.Add(phone);

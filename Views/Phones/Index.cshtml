@@ -5,75 +5,100 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutNew.cshtml";
 }
-    <link href="~/Asset/Phone.css" rel="stylesheet" type="text/css" />
-    <section class="py-5 body_shop">
-   
-        <div class="container px-4 px-lg-5 mt-5">
-            @using (Html.BeginForm("Index", "Phones", FormMethod.Get))
-            {
-                <div class="text-input text-center mb-5">
-                    <input type="text" name="Search" id="input1" placeholder="Try typing something in here!">
-                    <button type="submit" class="btn btn-success">Tìm KIẾM</button>
-                </div>
-            }
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <div class="col-4">
-                    
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<link href="~/Asset/Phone.css" rel="stylesheet" type="text/css" />
+<style>
+    .dropdown11 {
+        border: 1px solid #eaeaea;
+        height: 550px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    .list-group-item {
+        border: none;
+    }
+
+    .pagination > li {
+        text-align: center;
+        margin: 0px auto;
+        width: 25px;
+        height: 25px;
+        border: 1px solid;
+    }
+</style>
+<section class="py-5 body_shop">
+
+    <div class="container">
+        @using (Html.BeginForm("Index", "Phones", FormMethod.Get))
+        {
+            <div class="text-input text-center mb-5">
+                <input type="text" name="Search" id="input1" placeholder="Try typing something in here!">
+                <button type="submit" class="btn btn-success">Tìm KIẾM</button>
+            </div>
+        }
+        <div class="d-flex ">
+            <div class="">
+
+                <div class="dropdown11">
+                    @*<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Thương hiệu
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             @Html.Action("Brand", "Phones")
-                        </div>
-                    </div>
-                </div>
-                <div class="col-8">
+                        </div>*@
+                    <ul>
+                        <h5>HÃNG ĐIỆN THOẠI</h5>
+                        <li>@Html.Action("Brand", "Phones")</li>
 
-                    <div class="row mb-5">
-                        @foreach (var item in Model)
-                        {
-                            <div class="col-4">
-                                <div class="card h-100">
-
-                                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                                    <a href="../Product/product..html">
-
-                                        <a href="/Phones/Details/@item.Id"><img class="card-img-top" src="/@item.Image" alt="..." /></a>
-
-                                    </a>
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-
-                                            <h5 class="fw-bolder">@item.Name</h5>
-
-                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-
-                                            <span class="text-muted text-decoration-line-through">@item.Price</span>
-                                        </div>
-                                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                            <div class="text-center"><a class="btn btn-outline-dark" href="/ShopingCart/AddToCart/@item.Id">Add to cart</a></div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        }
-                    </div>
-
+                    </ul>
                 </div>
             </div>
-            <div class="text-center page_shop">
-                <div class="page">
-                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+            <div class="">
+
+                <div class="row mb-5" style="transform: translateX(84px);">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-4">
+                            <div class="card h-100">
+
+                                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                                <a href="../Product/product..html">
+
+                                    <a href="/Phones/Details/@item.Id"><img class="card-img-top" src="/@item.Image" alt="..." /></a>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+
+                                        <h5 class="fw-bolder">@item.Name</h5>
+
+                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+
+                                        <span class="text-muted text-decoration-line-through">@item.Price</span>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark" href="/ShopingCart/AddToCart/@item.Id">Add to cart</a></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    }
                 </div>
+
             </div>
         </div>
-    </section>
+        <div class="text-center page_shop">
+            <div class="page">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+            </div>
+        </div>
+    </div>
+</section>

@@ -3,7 +3,7 @@
         ViewBag.Title = "Login";
 }
     <link href="~/Asset/Login.css" rel="stylesheet" type="text/css" />
-    <div class="login">
+    <div class="login" style="background-color: cadetblue; border-radius:20px;">
         <h2 class="active"> sign in </h2>
         @using (Html.BeginForm("Login", "Customers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {

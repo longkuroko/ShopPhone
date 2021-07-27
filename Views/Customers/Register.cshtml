@@ -8,60 +8,69 @@
 
 
 
+<style>
+    .form-control{
+        transform: translatey(-14px);
+    }
+    #Password{
+        transform:translateY(-10px);
+    }
+</style>
 
-<div class="login">
+<div class="login" style="background: rgb(63,94,251);
+background: linear-gradient(240deg, rgba(63,94,251,1) 0%, rgba(237,72,222,1) 92%, rgba(252,70,220,1) 100%);border-radius: 20px;">
     <h2 class="active"> Register </h2>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <form>
+<form>
 
-            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control text" } })
-            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-            <span>username</span>
-            @if (ViewBag.error != null)
-            {
-                <span class="badge badge-danger">@ViewBag.error</span>
+    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control text" } })
+    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+    <span>username</span>
+    @if (ViewBag.error != null)
+    {
+        <span class="badge badge-danger">@ViewBag.error</span>
 
-            }
-            <br>
+    }
+    <br>
 
-            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control text" } })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            <span>password</span>
+    @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control text pass" } })
+    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+    <span>password</span>
+
+    
+
+    @Html.EditorFor(model => model.fullname, new { htmlAttributes = new { @class = "form-control text" } })
+    @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
+    <span>Full Name</span>
+    <br>
+
+    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control text" } })
+    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+    <span>Address</span>
+    <br>
+
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text" } })
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    <span>Email</span>
+    <br>
+
+    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control text" } })
+    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+    <span>Phone</span>
+    <br>
+
+    <button class="signin sign" style="    margin-top: -8px;">
+        Sign Up
+    </button>
 
 
-            <br>
-
-            @Html.EditorFor(model => model.fullname, new { htmlAttributes = new { @class = "form-control text" } })
-            @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
-            <span>Full Name</span>
-            <br>
-
-            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control text" } })
-            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-            <span>Address</span>
-            <br>
-
-            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text" } })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            <span>Email</span>
-            <br>
-
-            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control text" } })
-            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-            <span>Phone</span>
-            <br>
-
-            <button class="signin sign">
-                Sign Up
-            </button>
-
-
-        </form>
+</form>
     }
 
-</div>
+
 

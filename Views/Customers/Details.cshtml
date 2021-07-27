@@ -185,7 +185,7 @@
                                     </div>
                                 </div>
                                 <div class="btn_inf position-relative">
-                                    <button type="button" class="btn2 btn mt-3 changeinfo position-static" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn2 btn mt-3 changeinfo position-static" data-toggle="modal" data-target="#ChangeInfoModal">
                                                                              THAY ĐỔI THÔNG TIN
                                      </button>
                                     <button type="button" class="btn2 btn mt-3 changeinfo" style="transform:translateX(70px)" data-toggle="modal" data-target="#PASSWORD">
@@ -194,8 +194,9 @@
                                 </div>
                             </div>
                         }
+
                         @*UPDATE THONG TIN CA NHANH*@
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="ChangeInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -205,7 +206,7 @@
                                         </button>
                                     </div>
                                     <form>
-                                        <div class="modal-body">
+                                        <div class="modal-body position-relative">
                                             <div class="form-control form-control_popup">
 
                                                 <div>
@@ -215,14 +216,14 @@
                                                     </div>
                                                 </div>
                                                 <div style="transform: translateY(-34px);">
-                                                    <label for="txtPatientNumber" class="input-label">Số Điện thoại </label>
+                                                    <label for="txtNumber" class="input-label">Số Điện thoại </label>
                                                     <div>
                                                         <input type="text" id="txtPatientNumber" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
                                                     </div>
                                                 </div>
 
                                                 <div style="transform: translateY(-65px);">
-                                                    <label for="txtPatientEmail" class="input-label">Email</label>
+                                                    <label for="txtEmail" class="input-label">Email</label>
                                                     <div>
                                                         <input type="text" id="txtPatientEmail" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
                                                     </div>
@@ -234,16 +235,21 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="modal-footer position-absolute" style="top:86%; left: 71%;">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-left: 70px;">Close</button>
+
+                                                <a href="#" class="btn btn-primary btn-save-info" onclick="UpdateInfo(this)" itemid="@Model.Id">Lưu</a>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                       
-                                            <a href="#" class="btn btn-primary btn-save-info" onclick="UpdateInfo(this)" itemid="@Model.Id">Lưu</a>
-                                        </div>
+                                  
                                     </form>
                                 </div>
                             </div>
                         </div>
+
+
+
+
                         <!--DOI MAT KHAU-->
                         <div class="modal fade" id="PASSWORD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog_pass" role="document">
@@ -254,7 +260,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body position-relative">
                                         <div class="form-control form-control_popup ">
                                             <div>
                                                 <label class="input-label">Mật khẩu cũ</label>
@@ -277,9 +283,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer  position-absolute" style="bottom:6%; left:73%;">
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
-                                        <a href="#" class="btn btn-primary btn-save-info" onclick="SavePwd(this)" itemid="@Model.Id">Lưu</a>
+                                         <a href="#" style="margin-left: -63px;" class="btn btn-primary btn-save-info" onclick="SavePwd(this)" itemid="@Model.Id">Lưu</a>
                                     </div>
                                 </div>
                             </div>
@@ -292,16 +298,13 @@
     </div>
 </div>
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script src="~/Assets/Client/petshop/bootstrap/js/popper.min.js"></script>
-<script src="~/Assets/Client/petshop/bootstrap/js/bootstrap.min.js"></script>
-<script src="~/Assets/Client/petshop/js/script.js"></script>
 <script>
     function UpdateInfo(item) {
         var userId = $(item).attr('itemid');
         var fullName = $('#txtCustomerName').val();
         var address = $('#txtAddress').val();
-        var phone = $('#txtPatientNumber').val();
-        var email = $('#txtPatientEmail').val();
+        var phone = $('#txtNumber').val();
+        var email = $('#txtEmail').val();
 
         var obj = {
             Id: userId,
@@ -311,7 +314,7 @@
             Email: email
         };
         $.ajax({
-            url: '/Customer/UpdateInfo',
+            url: '/Customers/UpdateInfo',
             method: 'POST',
             data: obj,
             success: function (data) {
@@ -353,7 +356,7 @@
                             newPwd: newPwd
                         };
                         $.ajax({
-                            url: '/Customer/ChangePwd',
+                            url: '/Customers/ChangePwd',
                             method: 'POST',
                             data: obj,
                             success: function (data) {
